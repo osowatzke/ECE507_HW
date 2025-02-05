@@ -112,5 +112,14 @@
 				\label{fig::stick_diagram_problem_2b}
 			\end{figure}
 		\end{enumerate}
+		
+		\item Using the Stick diagrams designed in the previous, question, Calculate the Area Estimation in terms of $\lambda$.
+			
+		We can estimate the area of the fabricated design by counting wiring tracks. Each wire track has a pitch of $8\lambda$. If we count the number of wires parallel to $V_{DD}$ (including $V_{DD}$), we can estimate the height of the cell. Similarly, we can estimate the width of the cell by counting the number of wires parallel to the polysilicon gates.
+		
+		For the layout in part a), we can view the circuit as two standard cells (one which produces $\bar{Y}$ and another which inverts it). The first cell is 7 wires tall and 5 wires wide ($56 \lambda \times 40 \lambda$), and the second cell is 4 wires tall and 2 wires wide ($32 \lambda \times 16 \lambda$). However, all our standard cells must have the same height and can only vary in width. Therefore, we must increase the size of the inverter to $56 \lambda \times 16 \lambda$. This results in a total area of $56 \lambda \times 56 \lambda$.
+		
+		The area of the layout in part b) is more straightforward to compute than the layout in part a). It is 7 wires tall and 5 wires wide, which results in an area of $56 \lambda \times 40 \lambda$.
+		 
 	\end{enumerate}
 \end{document}
