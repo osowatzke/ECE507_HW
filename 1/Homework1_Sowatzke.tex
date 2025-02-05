@@ -78,7 +78,7 @@
 				\label{fig::logic_diagram_problem_2a}
 			\end{figure}
 			
-			The Euler path can be found by independently tracing through all the nodes of the pull-down and pull-up networks once and only once. The path we find must also be consistent between the pull-up and pull-down networks. For this example, we determine the following input ordering: A, B, D, C. This ordering we find using the Euler path helps us generate a layout without diffusion breaks. Using the requested input ordering, we come up with the stick diagram shown in Figure \ref{fig::stick_diagram_problem_2a}. Note that we have also added an inverter to get $Y$ instead of $\bar{Y}$
+			The Euler path can be found by independently tracing through all the nodes of the pull-down and pull-up networks once and only once. The path we find must also be consistent between the pull-up and pull-down networks. For this example, we determine the following input ordering: A, B, D, and C. This ordering we find using the Euler path helps us generate a layout without diffusion breaks. Using the requested input ordering, we come up with the stick diagram shown in Figure \ref{fig::stick_diagram_problem_2a}. Note that we have also added an inverter to get $Y$ instead of $\bar{Y}$
 			
 			\begin{figure}[H]
 				\centerline{\fbox{\includegraphics[width=0.6\textwidth]{stick_diagram_problem_2a.png}}}
@@ -87,6 +87,30 @@
 			\end{figure}
 			
 			\item $Y = \overline{A \cdot B + C \cdot D}$
+			
+			The provided boolean expression is now in complemented form, so no inverter is needed. Following the steps in part a), we design the pull-down circuit for this part of the problem. The resulting pull-down circuit is shown in the bottom half of Figure \ref{fig::cmos_layout_problem_2b}. Using the rule of conduction complements, we then design the required pull-up circuit, which is shown in the top half of Figure \ref{fig::cmos_layout_problem_2b}.
+			
+			\begin{figure}[H]
+				\centerline{\fbox{\includegraphics[width=0.35\textwidth]{cmos_layout_problem_2b.png}}}
+				\caption{CMOS Layout for Problem 2b}
+				\label{fig::cmos_layout_problem_2b}
+			\end{figure}
+			
+			Next, we determine the ordering of the stick diagram inputs by find the Euler Path through the circuit. This path is illustrate in the logic diagram shown in Figure \ref{fig::logic_diagram_problem_2b}. Using the logic diagram, we find an input ordering of A, B, D, and C, identical to what was found in part a).
+			
+			\begin{figure}[H]
+				\centerline{\fbox{\includegraphics[width=0.45\textwidth]{logic_diagram_problem_2b.png}}}
+				\caption{Logic Diagram for Problem 2b Illustrating Euler Path}
+				\label{fig::logic_diagram_problem_2b}
+			\end{figure}
+			
+			Finally, with the order of inputs, we can create the stick diagram shown in Figure \ref{fig::stick_diagram_problem_2b}.
+			
+			\begin{figure}[H]
+				\centerline{\fbox{\includegraphics[width=0.5\textwidth]{stick_diagram_problem_2b.png}}}
+				\caption{Stick Diagram for Problem 2b}
+				\label{fig::stick_diagram_problem_2b}
+			\end{figure}
 		\end{enumerate}
 	\end{enumerate}
 \end{document}
