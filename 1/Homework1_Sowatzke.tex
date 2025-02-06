@@ -8,6 +8,15 @@
 \usepackage{float}
 \usepackage{xcolor}
 \usepackage{listings}
+\usepackage{hyperref}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=blue,      
+    urlcolor=blue,
+    citecolor=blue,
+}
 
 \newcommand{\zerodisplayskip}{
 	\setlength{\abovedisplayskip}{0pt}%
@@ -16,7 +25,6 @@
 	\setlength{\belowdisplayshortskip}{0pt}%
 	\setlength{\mathindent}{0pt}}
 	
-
 \definecolor{vgreen}{RGB}{104,180,104}
 \definecolor{vblue}{RGB}{49,49,255}
 \definecolor{vorange}{RGB}{255,143,102}
@@ -156,6 +164,9 @@
 		For the layout in part a), we can view the circuit as two standard cells (one which produces $\bar{Y}$ and another which inverts it). The first cell is 7 wires tall and 5 wires wide ($56 \lambda \times 40 \lambda$), and the second cell is 4 wires tall and 2 wires wide ($32 \lambda \times 16 \lambda$). However, all our standard cells must have the same height and can only vary in width. Therefore, we must increase the size of the inverter to $56 \lambda \times 16 \lambda$. This results in a total area of $56 \lambda \times 56 \lambda$.
 		
 		The area of the layout in part b) is more straightforward to compute than the layout in part a). It is 7 wires tall and 5 wires wide, which results in an area of $56 \lambda \times 40 \lambda$.
+		 
+		 \item Design and verify a Verilog code for a Ripple Carry Adder with a testbench and simulation waveforms in EDA Playground (using Primis AI) and describe each segment of the code and the testbench. (Please Refer to Installation guide \href{https://docs.primis.ai/rapidgpt-getting-started/}{https://docs.primis.ai/rapidgpt-getting-started/})
+		 
 		 
 	\end{enumerate}
 	
