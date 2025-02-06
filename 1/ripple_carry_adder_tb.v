@@ -56,11 +56,13 @@ module ripple_carry_adder_tb;
 
                     // Check output
                     if ({cout, sum} !== expected_sum) begin
-                        $display("Error at time %0t: a=%b, b=%b, cin=%b, sum=%b, cout=%b (expected %b)", 
-                                 $time, a, b, cin, sum, cout, expected_sum);
+                        $display({"Error at time %0t: a=%b, b=%b, ",
+                                  "cin=%b, sum=%b, cout=%b (expected %b)"}, 
+                                  $time, a, b, cin, sum, cout, expected_sum);
                     end else begin
-                        $display("Correct at time %0t: a=%b, b=%b, cin=%b, sum=%b, cout=%b", 
-                                 $time, a, b, cin, sum, cout);
+                        $display({"Correct at time %0t: a=%b, ",
+                                  "b=%b, cin=%b, sum=%b, cout=%b"}, 
+                                  $time, a, b, cin, sum, cout);
                     end
                 end
             end
