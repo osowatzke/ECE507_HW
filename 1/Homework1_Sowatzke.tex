@@ -43,6 +43,8 @@
     literate=*{:}{:}1
 }
 
+\lstset{style={verilog-style},showstringspaces=false}
+
 \makeatletter
 \newcommand*\@lbracket{[}
 \newcommand*\@rbracket{]}
@@ -60,7 +62,7 @@
 \newcommand{\code}[1]{%
 	\colorbox{Gainsboro}{\texttt{#1}}%
 }
-
+		 
 %\newcommand{\code}[1]{
 %	\colorbox{Gainsboro}{\lstinline{#1}}
 %}
@@ -184,6 +186,16 @@
 		
 		We use a \code{generate} block to instantiate a variable number of full adder modules. We use a vector of carry bits (\code{carry}) that is \code{WIDTH+1} bits wide to set the input carry bit to each full adder stage and capture the output carry bit of each full adder stage. The first bit in the carry vector is the carry input and each subsequent bit is the output of the previous full adder module. Thus, the \code{WIDTH} bit of the carry vector is the carry bit output of the top-level module. The carry vector combined with the \code{generate} block allow us to easily connect the carry output of one adder module to the input of the next adder module.
 		 
+		 The ripple carry adder testbench module (\code{ripple\_carry\_adder\_tb}) verifies the behavior of the ripple carry adder. It has no inputs or outputs but instead generates the inputs for the ripple carry adder and compares the ripple carry adder output to the expected output. The testbench contains an instantiation of the ripple carry adder of \code{WIDTH} bits (where \code{WIDTH} defaults to 4):
+		 
+		 \begin{figure}[H]
+		 	\centerline{\includegraphics[width=0.25\textwidth]{ripple_carry_adder_inst.png}}
+			\caption{Ripple Carry Adder Instantiation}
+			\label{fig::ripple_carry_adder_inst}
+		 \end{figure}
+		 
+		 The testbench also generates a clock (\code{clk}) with a 5 ns period. However, this clock is just used in the waveform viewer as a frame of reference for the UUT inputs/outputs. During initialization, the \code{\$dumpfile} and \code{\$dumpvars} command are used to capture signals in the waveform file. After waiting for the system reset (100 ns), the testbench then tests the UUT with each combination of \code{a}, \code{b}, and \code{cin} (a total of $2^9=512$ tests). The inputs for each combination are held constant for 10 ns before the adder outputs are compared to reference outputs. For every mismatch, an error message is displayed and the number of errors is incremented. The testbench also increments the number of tests run after each combination of inputs is tested. After testing all 512 combinations of the inputs, the testbench displays an overall pass/fail result, which simplifies the validation.
+		  
 		 \iffalse
 		 \includegraphics[width=0.9\textwidth]{ripple_carry_adder_ai_prompt1.png}
 		 
