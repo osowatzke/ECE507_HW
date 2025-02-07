@@ -6,9 +6,9 @@
 \usepackage{enumitem}
 \usepackage{graphicx}
 \usepackage{float}
-\usepackage{xcolor}
 \usepackage{listings}
 \usepackage{hyperref}
+\usepackage[svgnames]{xcolor}
 
 \hypersetup{
     colorlinks=true,
@@ -56,6 +56,14 @@
     \fi\fi\fi
 }
 \makeatother
+
+\newcommand{\code}[1]{%
+	\colorbox{Gainsboro}{\texttt{#1}}%
+}
+
+%\newcommand{\code}[1]{
+%	\colorbox{Gainsboro}{\lstinline{#1}}
+%}
 
 \title{Homework 1}
 \author{Owen Sowatzke}
@@ -166,10 +174,39 @@
 		 
 		 \item Design and verify a Verilog code for a Ripple Carry Adder with a testbench and simulation waveforms in EDA Playground (using Primis AI) and describe each segment of the code and the testbench. (Please Refer to Installation guide \url{https://docs.primis.ai/rapidgpt-getting-started/})
 		 
-		 The verilog code and testbench generated using Primis AI are attached in Appendix \ref{appendix::ripple_carry_adder} and Appendix \ref{appendix::testbench} respectively. 
+		 \pagebreak
 		 
+		 Using Primis AI, I wrote a Verilog ripple carry adder and testbench. These files are included with the submission and are named "ripple\_carry\_adder.v" and "rippler\_carry\_adder\_tb.v" respectively. Within each source file, comments explain how each section of the code works.
+		 
+		 The ripple carry adder module (\code{ripple\_carry\_adder}) adds inputs \code{a}, \code{b}, and \code{cin}, where \code{a} and \code{b} are input operands that are \code{WIDTH} bits wide and \code{cin} is the input carry bit. The module outputs a \code{sum} that is \code{WIDTH} bits wide and a carry bit, \code{cout}. \code{WIDTH} is a parameter, which can be set by the user when the module is instantiated. This allows the user to instantiate adders of arbitrary width without changing the source code.
+		 
+		The ripple carry adder is composed of multiple \code{full\_adder} modules - one for each input bit. Each of these full adder modules adds single bits \code{a}, \code{b}, and \code{cin} and outputs a single bit \code{sum} and \code{cout}. The carry output (\code{cout}) of each adder module is connected to the carry input (\code{cout}) of the next adder module. The \code{sum} bit is the XOR of \code{a}, \code{b}, and \code{c} bits. The \code{sum} bit is 1 when an odd number of the input its are high (i.e. sum=1 or sum=3). The \code{cout} bit is high when both \code{a} and \code{b} are 1 or when either \code{a} and \code{b} are 1 and \code{c} is 1 (i.e. sum=2 or sum=3). This is the expected behavior for the full adder module.
+		
+		We use a \code{generate} block to instantiate a variable number of full adder modules. We use a vector of carry bits (\code{carry}) that is \code{WIDTH+1} bits wide to set the input carry bit to each full adder stage. The first bit in the carry vector is the carry input and each subsequent bit is the output of the previous full adder module. The carry bit output by the ripple carry adder is the \code{WIDTH} bit of the carry vector. The carry vector combined with the \code{generate} block allow us to easily connect the carry output of one adder module to the input of the next adder module.
+		 
+		 \iffalse
+		 \includegraphics[width=0.9\textwidth]{ripple_carry_adder_ai_prompt1.png}
+		 
+		 \includegraphics[width=0.9\textwidth]{ripple_carry_adder_ai_prompt2.png}
+		 
+		 \includegraphics[width=0.9\textwidth]{ripple_carry_adder_ai_prompt3.png}
+		 
+		 \includegraphics[width=0.9\textwidth]{ripple_carry_adder_ai_prompt4.png}
+		 
+		 \includegraphics[width=0.9\textwidth]{ripple_carry_adder_ai_prompt5.png}
+		 
+		 \includegraphics[width=0.9\textwidth]{ripple_carry_adder_ai_prompt6.png}
+		 %\begin{figure}[H]
+		%	\centerline{\includegraphics[width=0.9\textwidth]{ripple_carry_adder_ai_prompt1.png}}
+			% \caption{Stick Diagram for Problem 2b}
+		%	\label{fig::ripple_carry_adder_ai_prompt1}
+		%\end{figure}
+			
+		 The verilog code and testbench generated using Primis AI are attached in Appendix \ref{appendix::ripple_carry_adder} and Appendix \ref{appendix::testbench} respectively. 
+		 \fi
 	\end{enumerate}
 	
+	\iffalse
 	\pagebreak
 	\appendix
 	\section{Verilog Ripple Carry Adder Written with Primis AI}
@@ -182,4 +219,5 @@
 	\label{appendix::testbench}
 	\lstset{style={verilog-style},showstringspaces=false}
 	\lstinputlisting{ripple_carry_adder_tb.v}
+	\fi
 \end{document}
