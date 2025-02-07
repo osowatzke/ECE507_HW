@@ -196,6 +196,20 @@
 		 
 		 The testbench also generates a clock (\code{clk}) with a 5 ns period. However, this clock is only used in the waveform viewer as a frame of reference for the UUT inputs/outputs. During initialization, the \code{\$dumpfile} and \code{\$dumpvars} command are used to capture signals in the waveform file. After waiting for the system reset (100 ns), the testbench tests the UUT with each combination of \code{a}, \code{b}, and \code{cin} (a total of $2^9=512$ tests). The inputs for each combination are held constant for 10 ns before the adder outputs are compared to reference outputs. For every mismatch, an error message is displayed using \code{\$display} and the number of errors is incremented. The testbench also keeps track of the tests run with an additional counter. After testing all 512 combinations of the inputs, the testbench displays an overall pass/fail result, which simplifies validation. Finally after waiting 100 ns, the simulation terminates. While the simulation is running, the \code{\$monitor} function is also used to monitor changes in the inputs and outputs of the adder.
 		  
+		 In EDA playground, we run the testbench and verify the behavior of our ripple carry adder. As previously stated, the testbench is validating the output of a 4-bit adder for all 512 combinations of the input. (This is equivalent to validating a 512 entry truth table with 9 inputs and 2 outputs). Using induction, we can infer that the adder should behave accordingly for larger input sizes. Figure \ref{fig::eda_playground_results_window} displays the EDA playground result window. This window captures some of the monitor statements we added in the testbench, but, more importantly, it displays an overall pass, validating the behavior of the design. Figure \ref{fig::eda_playground_waveform} displays the testbench waveform output, which is useful for debugging the design. At the position of the cursor, we can perform a spot check of the results. At this position, a=3, b=10, and cin=1. The measured output is 14, which is the expected value for a+b+cin.
+		 
+		 \begin{figure}[H]
+		 	\centerline{\includegraphics[width=0.9\textwidth]{eda_playground_results_window.png}}
+			\caption{EDA Playground Results Window}
+			\label{fig::eda_playground_results_window}
+		 \end{figure}
+		 
+		 \begin{figure}[H]
+		 	\centerline{\includegraphics[width=0.9\textwidth]{eda_playground_waveform.png}}
+			\caption{EDA Playground Waveform Output}
+			\label{fig::eda_playground_waveform}
+		 \end{figure}
+		 
 		 \iffalse
 		 \includegraphics[width=0.9\textwidth]{ripple_carry_adder_ai_prompt1.png}
 		 
