@@ -116,7 +116,7 @@
 			
 			In CMOS circuit design, we implement circuits that are the complement of boolean expressions. Because the provided expression is not in complement form, we must design a circuit to get $\bar{Y}$ and append an inverter to get $Y$.
 			
-			We start by designing the pull-down circuit to get $\bar{Y}$. We replace each "or" with a parallel set of nmos gates and each "and" with a series of nmos gates. The pull-down circuit is shown in the bottom left corner of Figure \ref{fig::cmos_layout_problem_2a}. We can then use the rule of conduction complements to design the pull-up circuit. To do so, we replace each parallel set of nmos gates with a series of pmos gates and each series of nmos gates with a parallel set of pmos gates. The resulting pull-up circuit is shown in the upper left of Figure \ref{fig::cmos_layout_problem_2a}. The output $\bar{Y}$ is then fed into an inverter to get $Y$.
+			We start by designing the pull-down circuit to get $\bar{Y}$. We replace each ``or" with a parallel set of nmos gates and each ``and" with a series of nmos gates. The pull-down circuit is shown in the bottom left corner of Figure \ref{fig::cmos_layout_problem_2a}. We can then use the rule of conduction complements to design the pull-up circuit. To do so, we replace each parallel set of nmos gates with a series of pmos gates and each series of nmos gates with a parallel set of pmos gates. The resulting pull-up circuit is shown in the upper left of Figure \ref{fig::cmos_layout_problem_2a}. The output $\bar{Y}$ is then fed into an inverter to get $Y$.
 			
 			\begin{figure}[H]
 				\centerline{\fbox{\includegraphics[width=0.5\textwidth]{cmos_layout_problem_2a.png}}}
