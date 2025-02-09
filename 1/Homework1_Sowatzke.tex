@@ -90,7 +90,7 @@
 		The materials in the layout are defined as follows:
 		
 		\begin{itemize}
-			\item Material 1 (solid black) is contact material. It is made of metal (usually aluminum).
+			\item Material 1 (solid black) is contact material. It is made of metal (usually aluminum). It is specifically where the field oxide has been etched to form a metal connection. 
 			\item Material 2 (solid green) is n+ diffusion (heavily doped n-type semiconductor [usually Si])
 			\item Material 3 (solid gray) is the n-well (lightly doped n-type semiconductor [usually Si])
 			\item Material 4 (solid orange) is the p+ diffusion (heavily doped p-type semiconductor [usually Si])
@@ -116,7 +116,7 @@
 			
 			In CMOS circuit design, we implement circuits that are the complement of boolean expressions. Because the provided expression is not in complement form, we must design a circuit to get $\bar{Y}$ and append an inverter to get $Y$.
 			
-			We start by designing the pull-down circuit to get $\bar{Y}$. We replace each ``or" with a parallel set of nmos gates and each ``and" with a series of nmos gates. The pull-down circuit is shown in the bottom left corner of Figure \ref{fig::cmos_layout_problem_2a}. We can then use the rule of conduction complements to design the pull-up circuit. To do so, we replace each parallel set of nmos gates with a series of pmos gates and each series of nmos gates with a parallel set of pmos gates. The resulting pull-up circuit is shown in the upper left of Figure \ref{fig::cmos_layout_problem_2a}. The output $\bar{Y}$ is then fed into an inverter to get $Y$.
+			We start by designing the pull-down circuit to get $\bar{Y}$. We replace each ``or" with a parallel set of nmos gates and each ``and" with a series of nmos gates. The pull-down circuit is shown in the bottom left corner of Figure \ref{fig::cmos_layout_problem_2a}. We can then use the rule of conduction complements to design the pull-up circuit. To do so, we replace each parallel set of nmos gates with a series of pmos gates and each series of nmos gates with a parallel set of pmos gates. The resulting pull-up circuit is shown in the upper left corner of Figure \ref{fig::cmos_layout_problem_2a}. The output $\bar{Y}$ is then fed into an inverter to get $Y$.
 			
 			\begin{figure}[H]
 				\centerline{\fbox{\includegraphics[width=0.5\textwidth]{cmos_layout_problem_2a.png}}}
@@ -187,11 +187,11 @@ Primis AI or your thoughts.
 submission.
 		 \end{itemize}
 		 
-		 Using Primis AI, I wrote a Verilog ripple carry adder and testbench. These files are included with the submission and are named "ripple\_carry\_adder.v" and "rippler\_carry\_adder\_tb.v" respectively. Within each source file, I added comments to explain how each section of the code works.
+		 Using Primis AI, I wrote a Verilog ripple carry adder and testbench. These files are included with the submission and are named ``ripple\_carry\_adder.v" and ``rippler\_carry\_adder\_tb.v" respectively. Within each source file, I added comments to explain how each section of the code works.
 		 
 		 The ripple carry adder module (\code{ripple\_carry\_adder}) adds inputs \code{a}, \code{b}, and \code{cin}, where \code{a} and \code{b} are input operands that are \code{WIDTH} bits wide and \code{cin} is the input carry bit. The module outputs a \code{sum} that is \code{WIDTH} bits wide and a carry bit, \code{cout}. \code{WIDTH} is a parameter, which can be set by the user when the module is instantiated. This allows the user to instantiate adders of arbitrary width without changing the source code.
 		 
-		The ripple carry adder is composed of multiple \code{full\_adder} modules - one for each input bit. Each of these full adder modules adds single bits \code{a}, \code{b}, and \code{cin} and outputs single bits \code{sum} and \code{cout}. The carry output (\code{cout}) of each adder module is connected to the carry input (\code{cin}) of the next adder module. The \code{sum} bit is the XOR of \code{a}, \code{b}, and \code{c} bits. The \code{sum} bit is 1 when an odd number of the input its are high (i.e. sum=1 or sum=3). The \code{cout} bit is high when both \code{a} and \code{b} are 1 or when either \code{a} and \code{b} is 1 and \code{c} is 1 (i.e. sum=2 or sum=3). This is the expected behavior for the full adder module.
+		The ripple carry adder is composed of multiple \code{full\_adder} modules - one for each input bit. Each of these full adder modules adds single bits \code{a}, \code{b}, and \code{cin} and outputs single bits \code{sum} and \code{cout}. The carry output (\code{cout}) of each full adder module is connected to the carry input (\code{cin}) of the next full adder module. The \code{sum} bit is the XOR of the \code{a}, \code{b}, and \code{c} bits. The \code{sum} bit is 1 when an odd number of the input bits are high (i.e. sum=1 or sum=3). The \code{cout} bit is high when both \code{a} and \code{b} are 1 (\code{a} + \code{b} = 2) or when \code{a} xor \code{b} is 1 (\code{a} + \code{b} = 1) and \code{c} is 1 (i.e. sum=2 or sum=3). This is the expected behavior for the full adder module.
 		
 		We use a \code{generate} block to instantiate a variable number of full adder modules. We use a vector of carry bits (\code{carry}) that is \code{WIDTH+1} bits wide to set the input carry bit to each full adder stage and capture the output carry bit of each full adder stage. The first bit in the carry vector is the carry input and each subsequent bit is the output of the previous full adder module. Thus, the \code{WIDTH} bit of the carry vector is the carry bit output of the top-level module. The carry vector combined with the \code{generate} block allow us to easily connect the carry output of one adder module to the input of the next adder module.
 		 
