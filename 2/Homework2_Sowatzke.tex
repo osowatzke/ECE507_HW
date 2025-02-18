@@ -80,15 +80,17 @@
 		
 		\begin{enumerate}
 		
-			\item Figure \ref{fig::mode_of_operations_part_a} depicts the subthreshold region.
+			\item Figure \ref{fig::mode_of_operations_part_a} depicts the cutoff region. In this region, there is no channel between the source and drain. The n+ doping around the source and drain forms a reversed-biased PN junctions with the p-type body, prevent current from flowing. As such, the current between the source and drain ($I_{ds}$) is approximately zero.
 			
 			\begin{figure}[H]				
 				\centerline{\includegraphics[width=0.5\textwidth]{mode_of_operations_part_a.png}}
-				\caption{CMOS Transistor in Subthreshold Region}
+				\caption{CMOS Transistor in Cutoff Region}
 				\label{fig::mode_of_operations_part_a}
 			\end{figure}
 		
-			\item Figure \ref{fig::mode_of_operations_part_b} depicts the resistive region.
+			\item Figure \ref{fig::mode_of_operations_part_b} depicts the resistive region. In this region, the positive gate charge attracts negative charge from the p-type body, forming a n-channel. Between, the p and n-type regions, the drift and diffusion currents counteract to form a depletion zone. Current cannot flow through the n-channel without a potential difference between drain and source. When this potential exists, electrons flow from source to drain, creating a current from the drain to the source. For small potential difference (small values of $V_D$), the current grows linearly with applied voltage, hence the naming of this region.
+			
+			% The diffusion current causes negative charge to form in the p-type body and positive charge to form in the n-type body. This eventually leads to an electric field and in turn a drift current, which prevents the movement of additional charged.
 			
 			\begin{figure}[H]				
 				\centerline{\includegraphics[width=0.5\textwidth]{mode_of_operations_part_b.png}}
