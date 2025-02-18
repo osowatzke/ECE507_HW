@@ -138,6 +138,33 @@
 			$I_D$ doubles when $\frac{W}{L}$ is doubled.
 			
 		\end{enumerate}
+		
+		\item The die yield is given by the formula:
+		
+		\begin{equation*}
+			\text{yield} = \frac{1}{(1+\text{Defects per unit area} \cdot \text{Die area})^{\alpha}}
+		\end{equation*}
+		
+		where $\alpha$ is a process-dependent factor, typically around 3.
+		
+		\begin{enumerate}
+			\item If a wafer has a defect density of $0.5\ \text{defects per cm}^2$, and the die area is $0.2\ \text{cm}^2$, calculate the expected yield.
+			
+			Assume that $\alpha$ is 3.
+			
+			\begin{equation*}
+				\Rightarrow \text{yield} = \frac{1}{[1 + (0.5\ \text{defects per cm}^2)(0.2\ \text{cm}^2)]^3} = \mathbf{75.13\%}
+			\end{equation*}
+			
+			\item If the defect density increases to $1.0\ \text{defects per cm}^2$, what is the new yield?
+			
+			Assume that $\alpha$ is 3.
+			
+			\begin{equation*}
+				\Rightarrow \text{yield} = \frac{1}{[1 + (1.0\ \text{defects per cm}^2)(0.2\ \text{cm}^2)]^3} = \mathbf{57.87\%}
+			\end{equation*}
+			
+		\end{enumerate}
 	\end{enumerate}
 
 \end{document}
