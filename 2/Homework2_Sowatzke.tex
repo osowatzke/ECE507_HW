@@ -164,6 +164,50 @@
 		
 		\item Using the I-V characteristics of an NMOS transistor, explain the different regions of operation (Cutoff, Linear, and Saturation). Derive the drain current ($I_D$) equations for each region and discuss how the gate-source voltage ($V_{gs}$) and drain-source voltage ($V_{ds}$) determine the mode of operation. 
 
+		In the cutoff region, $V_{gs} < V_t$. As a result, there is no inversion region and there is approximately no current as a result.
+		
+		$\Rightarrow I_{ds} \approx 0$
+		
+		In the linear region, where $V_{gs} > V_t$ and $V_{ds} < V_{dsat}$, the current increases linearly with $V_{ds}$ for small $V_{ds}$. The current in this region can be computed as follows:
+		
+		\begin{equation*}		
+			I_{ds} = \frac{Q_{channel}}{t} = \frac{C_gV}{L/\nu}
+		\end{equation*}
+		
+		$C_g$ is the gate capacitance and is defined as follows:
+		
+		\begin{equation*}
+			C_g = C_{ox}WL = \frac{\varepsilon_{ox}}{t_{ox}}WL
+		\end{equation*}
+		
+		$V$ is the amount of voltage attracting charge to the channel and is defined as follows:
+		
+		\begin{equation*}
+			V = V_{gc} - V_t = V_{gs} - V_t - \frac{V_{ds}}{2}
+		\end{equation*}
+		
+		$\nu$ is the velocity of charge carriers and is defined as follows:
+		
+		\begin{equation*}
+			\nu = \mu\xi = \mu\frac{V_{ds}}{L}
+		\end{equation*}
+		
+		Substituting into our previous expression for $I_{ds}$, we obtain:
+		
+		\begin{equation*}
+			I_{ds} = C_{ox}WL\left(V_{gs} - V_t - \frac{V_{ds}}{2}\right)\left(\frac{1}{L}\right)\left(\mu\frac{V_{ds}}{L}\right)
+		\end{equation*}
+		
+		\begin{equation*}
+			I_{ds} = \mu{C_{ox}}\frac{W}{L}\left(V_{gs} - V_t - \frac{V_{ds}}{2}\right)V_{ds}
+		\end{equation*}
+		
+		\begin{equation*}
+			I_{ds} = \beta\left(V_{gs} - V_t - \frac{V_{ds}}{2}\right)V_{ds}
+		\end{equation*}
+		
+		where $\beta = \mu{C_{ox}}\frac{W}{L}$
+		
 		\item For an NMOS transistor, the drain current in the saturation region is given by:
 		
 		\begin{equation*}
