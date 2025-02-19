@@ -222,6 +222,18 @@
 			I_{ds} = \frac{\beta}{2}\left(V_{gs} - V_t\right)^2
 		\end{equation*}
 		
+		We can summarize these results as follows:
+		
+		\begin{equation*}
+			I_{ds} = \begin{cases}
+				0 & V_{gs} < V_t \\
+				\beta\left(V_{gs}-V_t-\frac{V_{ds}}{2}\right)V_{ds} & V_{ds} < V_{dsat} \\
+				\frac{\beta}{2}(V_{gs}-V_t)^2 & V_{ds} > V_{dsat}
+			\end{cases}
+		\end{equation*}
+		
+		where $\beta = \mu{C_{ox}}\frac{W}{L}$
+		
 		\item For an NMOS transistor, the drain current in the saturation region is given by:
 		
 		\begin{equation*}
