@@ -80,7 +80,7 @@
 		
 		\begin{enumerate}
 		
-			\item Figure \ref{fig::mode_of_operations_part_a} depicts the cutoff region. In this region, there is no channel between the source and drain. The n+ doping around the source and drain forms a reversed-biased PN junctions with the p-type body, prevent current from flowing. As such, the current between the source and drain ($I_{D}$) is approximately zero.
+			\item Figure \ref{fig::mode_of_operations_part_a} depicts the cutoff region. In this region, there is no channel between the source and drain. The n+ doping around the source and drain forms reversed-biased PN junctions with the p-type body, preventing current from flowing. As such, the current between the source and drain ($I_{D}$) is approximately zero.
 			
 			\begin{figure}[H]				
 				\centerline{\includegraphics[width=0.5\textwidth]{mode_of_operations_part_a.png}}
@@ -88,7 +88,7 @@
 				\label{fig::mode_of_operations_part_a}
 			\end{figure}
 		
-			\item Figure \ref{fig::mode_of_operations_part_b} depicts the resistive region. In this region, the positive gate charge attracts negative charge from the p-type body, forming a n-channel. Between, the p and n-type regions, the drift and diffusion currents counteract to form a depletion zone. Current cannot flow through the n-channel without a potential difference between drain and source. When this potential exists, electrons flow from source to drain, creating a current from the drain to the source. For small potential difference (small values of $V_D$), the current grows linearly with applied voltage, hence the naming of this region.
+			\item Figure \ref{fig::mode_of_operations_part_b} depicts the resistive region. In this region, the positive gate charge attracts negative charge from the p-type body, forming a n-channel (inversion region). Between, the p and n-type regions, the drift and diffusion currents counteract to form a depletion zone. Current cannot flow through the n-channel without a potential difference between drain and source. When this potential exists, electrons flow from source to drain, creating a current from the drain to the source. For small potential difference (small values of $V_D$), the current grows linearly with applied voltage, hence the naming of this region.
 			
 			% The diffusion current causes negative charge to form in the p-type body and positive charge to form in the n-type body. This eventually leads to an electric field and in turn a drift current, which prevents the movement of additional charged.
 			
@@ -98,7 +98,9 @@
 				\label{fig::mode_of_operations_part_b}
 			\end{figure}
 			
-			\item Figure \ref{fig::mode_of_operations_part_c} depicts the start of the saturation region. Here the channel is being pinched off at the drain because the gate to drain voltage ($V_{gd}$) falls below the threshold voltage ($V_t$). This causes the region of the channel near the drain to no longer be inverted. However, the potential difference still accelerates the electrons from source to drain. As we further increase $V_{ds}$, the drain to source current $I_{D}$ saturates at a value of $I_{D_{sat}}$.
+			\item Figure \ref{fig::mode_of_operations_part_c} depicts the pinch-off point (start of the saturation region). Here the gate to drain voltage ($V_{gd}$) is exactly equal to the threshold voltage ($V_th$). $V_{gd}$ must be greater than the $V_{th}$ to form an inversion layer at the drain. Thus, the inversion layer and channel disappear at the drain forming what is known at the pinch-off point. Beyond this point, the drain-source current saturates at $I_{D_{SAT}}$.  
+						
+			% \item Figure \ref{fig::mode_of_operations_part_c} depicts the start of the saturation region. Here the channel is being pinched off at the drain because the gate to drain voltage ($V_{gd}$) falls below the threshold voltage ($V_t$). This causes the region of the channel near the drain to no longer be inverted. However, the potential difference still accelerates the electrons from source to drain. As we further increase $V_{ds}$, the drain to source current $I_{D}$ saturates at a value of $I_{D_{sat}}$.
 			
 			\begin{figure}[H]				
 				\centerline{\includegraphics[width=0.5\textwidth]{mode_of_operations_part_c.png}}
