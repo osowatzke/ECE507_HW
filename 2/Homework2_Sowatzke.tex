@@ -133,7 +133,35 @@
 			\caption{IV Characteristic of a PMOS Transistor}
 			\label{fig::iv_characteristics_pmos}
 		\end{figure}
-			
+		
+		For PMOS transistors, the polarities of all voltages and currents are reversed. The transistor turns on for $V_{gs} < V_t$  (or when the gate is at a lower voltage than the source). The drain current ($I_D$) is also negative for PMOS transistors because positive carriers (holes) are flowing from source to drain. The current between the source and drain also increases as the drain-source voltage ($V_{ds}$) becomes more negative.
+		
+		For NMOS transistors:
+		
+		\begin{equation*}
+			I_{ds} = \begin{cases}
+				0 & V_{gs} < V_t \\
+				\beta_n\left(V_{gs}-V_t-\frac{V_{ds}}{2}\right)V_{ds} & V_{ds} < V_{dsat} \\
+				\frac{\beta_n}{2}(V_{gs}-V_t)^2 & V_{ds} > V_{dsat}
+			\end{cases}
+		\end{equation*}
+		
+		For PMOS transistors:
+		
+		\begin{equation*}
+			I_{ds} = \begin{cases}
+				0 & V_{gs} > V_t \\
+				-\beta_p\left(V_{gs}-V_t-\frac{V_{ds}}{2}\right)V_{ds} & V_{ds} > V_{dsat} \\
+				-\frac{\beta_p}{2}(V_{gs}-V_t)^2 & V_{ds} < V_{dsat}
+			\end{cases}
+		\end{equation*}
+		
+		where $\beta_n = \mu_nC_{ox}W/L$ and $\beta_p = \mu_pC_{ox}W/L$.
+		
+		When the transistor is on, the current is proportional to the mobility of the majority carrier. (i.e. $I_{ds} \propto \mu_n$ for NMOS transistors and $I_{ds} \propto \mu_p$ for PMOS transistors).
+		
+		Because the mobility of holes in PMOS transistors is less than the mobility of electrons in NMOS transistors, the current in PMOS transistors will be less than the current in NMOS transistors with all other variables equal. To provide the same current with a PMOS transistor, we should increase the width by $\mu_n/\mu_p$ (typically on the order of 2 or 3).
+		
 		\item Using the I-V characteristics of an NMOS transistor, explain the different regions of operation (Cutoff, Linear, and Saturation). Derive the drain current ($I_D$) equations for each region and discuss how the gate-source voltage ($V_{gs}$) and drain-source voltage ($V_{ds}$) determine the mode of operation. 
 
 		\item For an NMOS transistor, the drain current in the saturation region is given by:
