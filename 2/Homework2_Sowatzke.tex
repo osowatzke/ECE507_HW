@@ -134,7 +134,7 @@
 			\label{fig::iv_characteristics_pmos}
 		\end{figure}
 		
-		For PMOS transistors, the polarities of all voltages and currents are reversed. The transistor turns on for $V_{gs} < V_t$  (or when the gate is at a lower voltage than the source). The drain current ($I_D$) is also negative for PMOS transistors because positive carriers (holes) flow from source to drain. The current between the source and drain also increases as the drain-source voltage ($V_{ds}$) becomes more negative.
+		For PMOS transistors, the polarities of all voltages and currents are reversed. The transistor turns on for $V_{gs} < V_t$  (or when the gate voltage is lower than the source voltage). The drain current ($I_D$) is also negative for PMOS transistors because positive carriers (holes) flow from source to drain. The current between the source and drain also increases as the drain-source voltage ($V_{ds}$) becomes more negative.
 		
 		For NMOS transistors:
 		
@@ -168,34 +168,56 @@
 		
 		$\Rightarrow I_{ds} \approx 0$
 		
-		In the linear region, where $V_{gs} > V_t$ and $V_{ds} < V_{dsat}$, the current increases linearly with $V_{ds}$ for small $V_{ds}$. The current in this region can be computed as follows:
+		In the linear region, where $V_{gs} > V_t$ and $V_{ds} < V_{dsat}$, the current increases linearly with $V_{ds}$ for small changes in $V_{ds}$. The current in this region can be computed as follows:
 		
 		\begin{equation*}		
-			I_{ds} = \frac{Q_{channel}}{t} = \frac{C_gV}{L/\nu}
+			I_{ds} = \frac{Q_{channel}}{t}
 		\end{equation*}
 		
-		$C_g$ is the gate capacitance and is defined as follows:
+		where $Q_{channel}$ is the charge of the channel and $t$ is the time it takes carriers to cross the channel. The channel charge can be further decomposed as follows:
+		
+		\begin{equation*}
+			Q_{channel} = C_gV
+		\end{equation*}
+		
+		where $C_g$ is the gate capacitance and $V$ is the amount of voltage attracting charge to the channel.
 		
 		\begin{equation*}
 			C_g = C_{ox}WL = \frac{\varepsilon_{ox}}{t_{ox}}WL
 		\end{equation*}
 		
-		$V$ is the amount of voltage attracting charge to the channel and is defined as follows:
-		
 		\begin{equation*}
 			V = V_{gc} - V_t = V_{gs} - V_t - \frac{V_{ds}}{2}
 		\end{equation*}
 		
-		$\nu$ is the velocity of charge carriers and is defined as follows:
+		Using the above expressions, we can write the charge of the channel as follows:
+		
+		\begin{equation*}
+			Q_{channel} = C_{ox}WL\left(V_{gs} - V_t - \frac{V_{ds}}{2}\right)
+		\end{equation*}
+		
+		Next, we can solve for the time it takes carriers to cross the channel:
+		
+		\begin{equation*}
+			t = \frac{L}{\nu}
+		\end{equation*}
+		
+		Here $\nu$ is the velocity of charge carriers and is defined as follows:
 		
 		\begin{equation*}
 			\nu = \mu\xi = \mu\frac{V_{ds}}{L}
 		\end{equation*}
 		
-		Substituting into our previous expression for $I_{ds}$, we obtain:
+		Therefore, we can rewrite $t$ as follows:
 		
 		\begin{equation*}
-			I_{ds} = C_{ox}WL\left(V_{gs} - V_t - \frac{V_{ds}}{2}\right)\left(\frac{1}{L}\right)\left(\mu\frac{V_{ds}}{L}\right)
+			t = \frac{L^2}{\mu{V_{ds}}}
+		\end{equation*}
+		
+		Finally, we can write $I_{ds}$ as follows:
+		
+		\begin{equation*}
+			I_{ds} = C_{ox}WL\left(V_{gs} - V_t - \frac{V_{ds}}{2}\right)\left(\frac{\mu{V_{ds}}}{L^2}\right)
 		\end{equation*}
 		
 		\begin{equation*}
@@ -208,7 +230,7 @@
 		
 		where $\beta = \mu{C_{ox}}\frac{W}{L}$
 		
-		In the saturation region, when $V_{gs} > V_t$ and $V_{ds} > V_{dsat} = V_{gs} - V_t$, the channel pinches off near the drain. In this region, the current no longer increases with $V_{ds}$ but is instead defined as follows:
+		In the saturation region, when $V_{gs} > V_t$ and $V_{ds} > V_{dsat} = V_{gs} - V_t$, the channel pinches off near the drain. In this region, the current no longer increases with $V_{ds}$ but is instead as follows:
 		
 		\begin{equation*}		
 			I_{ds} = \beta\left(V_{gs} - V_t - \frac{V_{dsat}}{2}\right)V_{dsat}
