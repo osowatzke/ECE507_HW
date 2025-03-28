@@ -108,10 +108,10 @@
         <mxCell id="r2n2yvnrFEnwATMW8XqZ-14" value="&lt;font style=&quot;font-size: 20px;&quot;&gt;$$\alpha=39/256$$&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
           <mxGeometry x="1020" y="485" width="60" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="r2n2yvnrFEnwATMW8XqZ-15" value="&lt;span style=&quot;font-size: 20px;&quot;&gt;$$P=3/64$$&lt;/span&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+        <mxCell id="r2n2yvnrFEnwATMW8XqZ-15" value="&lt;span style=&quot;font-size: 20px;&quot;&gt;$$P=25/64$$&lt;/span&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
           <mxGeometry x="1380" y="250" width="60" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="r2n2yvnrFEnwATMW8XqZ-16" value="&lt;span style=&quot;font-size: 20px;&quot;&gt;$$\alpha=183/4096$$&lt;/span&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+        <mxCell id="r2n2yvnrFEnwATMW8XqZ-16" value="&lt;span style=&quot;font-size: 20px;&quot;&gt;$$\alpha=975/4096$$&lt;/span&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
           <mxGeometry x="1380" y="290" width="60" height="30" as="geometry" />
         </mxCell>
       </root>
@@ -195,7 +195,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="tBRpCN6c7Njw4HYwIOhr" name="part d)">
-    <mxGraphModel dx="1587" dy="845" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="1" shadow="0">
+    <mxGraphModel dx="2292" dy="1221" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="1" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
