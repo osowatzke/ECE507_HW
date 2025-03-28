@@ -1,0 +1,93 @@
+\documentclass[fleqn]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage[nodisplayskipstretch]{setspace}
+\usepackage{amsmath, nccmath, bm}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{listings}
+\usepackage{hyperref}
+\usepackage[svgnames]{xcolor}
+\graphicspath{{./images}}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    filecolor=black,      
+    urlcolor=blue
+    }
+
+\newcommand{\zerodisplayskip}{
+	\setlength{\abovedisplayskip}{0pt}%
+	\setlength{\belowdisplayskip}{0pt}%
+	\setlength{\abovedisplayshortskip}{0pt}%
+	\setlength{\belowdisplayshortskip}{0pt}%
+	\setlength{\mathindent}{0pt}}
+	
+\definecolor{vgreen}{RGB}{104,180,104}
+\definecolor{vblue}{RGB}{49,49,255}
+\definecolor{vorange}{RGB}{255,143,102}
+
+\lstdefinestyle{verilog-style}
+{
+    language=Verilog,
+    basicstyle=\small\ttfamily,
+    keywordstyle=\color{vblue},
+    identifierstyle=\color{black},
+    commentstyle=\color{vgreen},
+    numbers=left,
+    numberstyle=\tiny\color{black},
+    numbersep=10pt,
+    tabsize=8,
+    moredelim=*[s][\colorIndex]{[}{]},
+    literate=*{:}{:}1
+}
+
+\lstset{style={verilog-style},showstringspaces=false}
+
+\makeatletter
+\newcommand*\@lbracket{[}
+\newcommand*\@rbracket{]}
+\newcommand*\@colon{:}
+\newcommand*\colorIndex{%
+    \edef\@temp{\the\lst@token}%
+    \ifx\@temp\@lbracket \color{black}%
+    \else\ifx\@temp\@rbracket \color{black}%
+    \else\ifx\@temp\@colon \color{black}%
+    \else \color{vorange}%
+    \fi\fi\fi
+}
+\makeatother
+
+\newcommand{\code}[1]{%
+	\colorbox{Gainsboro}{\texttt{#1}}%
+}
+
+\title{Homework 3}
+\author{Owen Sowatzke}
+\date{April 2, 2025}
+
+\begin{document}
+
+	\offinterlineskip
+	\setlength{\lineskip}{12pt}
+	\zerodisplayskip
+	\maketitle
+	
+	\begin{enumerate}
+		\item A digital system-on-chip (SoC) is fabricated using a \textbf{1V, 65nm} process, where the drawn channel lengths are \textbf{50nm}, and $\mathbf{\lambda}$ \textbf{= 25nm}. The chip consists of \textbf{600 million transistors}, out of which \textbf{70 million} are used for logic, while the remaining transistors are embedded in memory arrays. 
+		
+		Key parameters for transistor width: 
+
+		\begin{itemize}
+			\item \textbf{Logic transistors:} Average width of $\mathbf{14\lambda}$	 
+			\item \textbf{Memory transistors:} Average width of $\mathbf{5\lambda}$
+		\end{itemize}
+			 
+		Memory arrays are structured into banks, and only the necessary bank is activated during operation, with a \textbf{memory activity factor of 0.03}. The static CMOS logic gates have an \textbf{average switching activity factor of 0.09}. Each transistor contributes $\mathbf{1.2\ \text{\textbf{fF}}/\text{\textbf{R}}_\text{\textbf{m}}}$ of gate capacitance and $\mathbf{1.0\ \text{\textbf{fF}}/\text{\textbf{R}}_\text{\textbf{m}}}$ of diffusion capacitance. Use the given conversion factor of $\mathbf{0.025\ \text{\textbf{R}}_\text{\textbf{m}}}$ \textbf{per} $\mathbf{\lambda}$ \textbf{for both logic and memory. Ignore wiring capacitance.}
+		
+		Calculate the \textbf{switching power consumption} of the chip when operating at \textbf{800 MHz}. Show all steps and formulas used in your calculations. 
+	\end{enumerate}
+
+\end{document}
