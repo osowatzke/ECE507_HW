@@ -144,6 +144,39 @@
 		\begin{equation*}
 			P_\text{static} = (541.95\ \text{mA} + 226.875\ \text{mA})(1.0 V) = \mathbf{768.825}\ \text{\textbf{mW}}
 		\end{equation*}	
+		
+		\item Estimate the activity factor at each node for each circuit if the inputs have $P = 0.5$. We can use Table \ref{table::gate_out_prob} to determine the output probabilities of each gate.
+		
+		\vspace{-24pt}	
+		\begin{table}[H]
+		\begin{center}
+		% \vcenter
+		\caption{Gate Output Probabilities}
+		\label{table::gate_out_prob}
+		{
+		\renewcommand{\arraystretch}{1.2}	
+		\begin{tabular}{| c | c |}
+			\hline
+			\textbf{Gate} & $\mathbf{P_Y}$\\
+			\hline	
+			Inverter & $\bar{P}_A$\\
+			\hline	
+			AND2 & $P_AP_B$\\
+			\hline	
+			OR2 & $1 - \bar{P}_A\bar{P}_B$\\
+			\hline	
+			NAND2 & $1 - P_AP_B$\\
+			\hline	
+			NOR2 & $\bar{P}_A\bar{P}_B$\\
+			\hline
+		\end{tabular}
+		}
+		\end{center}
+		\end{table}
+		\vspace{-24pt}	
+		
+		Then, we can use $\alpha = \bar{P}_iP_i$ to determine the activity factor.
+		
 	\end{enumerate}
 
 \end{document}
