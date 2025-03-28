@@ -87,7 +87,28 @@
 			 
 		Memory arrays are structured into banks, and only the necessary bank is activated during operation, with a \textbf{memory activity factor of 0.03}. The static CMOS logic gates have an \textbf{average switching activity factor of 0.09}. Each transistor contributes $\mathbf{1.2\ \text{\textbf{fF}}/\text{\textbf{R}}_\text{\textbf{m}}}$ of gate capacitance and $\mathbf{1.0\ \text{\textbf{fF}}/\text{\textbf{R}}_\text{\textbf{m}}}$ of diffusion capacitance. Use the given conversion factor of $\mathbf{0.025\ \text{\textbf{R}}_\text{\textbf{m}}}$ \textbf{per} $\mathbf{\lambda}$ \textbf{for both logic and memory. Ignore wiring capacitance.}
 		
-		Calculate the \textbf{switching power consumption} of the chip when operating at \textbf{800 MHz}. Show all steps and formulas used in your calculations. 
+		Calculate the \textbf{switching power consumption} of the chip when operating at \textbf{800 MHz}. Show all steps and formulas used in your calculations.
+		
+		\begin{equation*}
+			C = 1.2\ \text{fF}/\text{R}_\text{m}\ \text{(gate)}\ + 1.0\ \text{fF}/\text{R}_\text{m}\ \text{(diffusion)} = 2.2\ \text{fF}/\text{R}_\text{m}
+		\end{equation*}
+		
+		\begin{equation*}
+			C_{logic} = (70 \times 10^6)(14\lambda)(0.025\ \text{R}_\text{m}/\lambda)(2.2\ \text{fF}/\text{R}_\text{m}) = 53.9\ \text{nF}
+		\end{equation*}
+		
+		\begin{equation*}
+			C_{mem} = (530 \times 10^6)(5\lambda)(0.025\ \text{R}_\text{m}/\lambda)(2.2\ \text{fF}/\text{R}_\text{m}) = 145.75\ \text{nF}
+		\end{equation*}
+		
+		\begin{equation*}
+			P_{switching} = {\alpha}CV_{DD}^2f = ({\alpha_{mem}}C_{mem} + {\alpha_{logic}}C_{logic})V_{DD}^2f
+		\end{equation*}
+		
+		\begin{equation*}
+			= \left[0.03(145.75\ \text{nF}) + 0.09(53.9\ \text{nF})\right](1^2)(800 \times 10^6) = \mathbf{7.3788}\ \text{\textbf{W}}
+		\end{equation*}
+		
 	\end{enumerate}
 
 \end{document}
