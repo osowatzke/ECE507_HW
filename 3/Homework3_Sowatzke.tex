@@ -391,6 +391,37 @@
 			\end{equation*}
 			
 		\end{enumerate}
+
+		\item You are designing a high-speed datapath and need to drive a large capacitive load using a multistage logic network. The output load is equivalent to 64 unit-sized inverters, and the input capacitance available at the beginning of the path is 1 unit.
+			
+		\begin{enumerate}
+			\item Assume the logic path consists of three stages of logic gates with a path logical effort G = 4, and there is no branching.
+				
+			\begin{itemize}
+				\item Calculate the electrical effort H.
+					
+				\begin{equation*}
+					H = \frac{C_{out}}{C_{in}} = \frac{64}{1} = \mathbf{64}
+				\end{equation*}
+					
+				\item Determine the total path effort F = G*H.
+					
+				\begin{equation*}
+					F = GH = 4(64) = \mathbf{256}
+				\end{equation*}
+					
+				\item Estimate the best stage effort $\hat{f}$ and the minimum Delay D assuming each gate has a parasitic delay p = 1.
+					
+				\begin{equation*}
+					\hat{f} = 256^{1/3} \approx \mathbf{6.3496}
+				\end{equation*}
+					
+				\begin{equation*}
+					D = \sum{d_i} = D_F + P = \sum{f_i} + \sum{p_i} = 3(6.3496) + 3 = \mathbf{22.0488}
+				\end{equation*}	
+					
+			\end{itemize}
+		\end{enumerate}
 	\end{enumerate}
 
 \end{document}
