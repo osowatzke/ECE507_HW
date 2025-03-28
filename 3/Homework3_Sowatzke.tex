@@ -440,8 +440,39 @@
 					\end{equation*}	
 				
 				\item Which design offers the lower delay? Why?
+				
+				The design with 4 stages has a lower delay. Even though the updated design includes more stages, the delay of each individual stage is lower due to a decreased fanout in each stage ($d = f + p$). Note that adding too many stages can increase the delay more than the delay is improved in each individual stage. Therefore, there is an optimal number of stages. Assuming a gate parasitics of 1, we find that the optimal stage fanout is close to 4, which just happens to match the results our 4 stage solution.
+				
 			\end{itemize}
 			
+			\item The third stage in your original 3-stage path is a NOR2 gate.
+			
+			\begin{itemize}
+				\item Given that the logical effort $g_{NOR2} = 5/3$ and parasitic delay $p_{NOR2} = 2$, recalculate the actual delay of the path using corrected gate delays (assume other stages are inverters)
+				
+				\begin{equation*}
+					G = \prod{g_i} = 1 \cdot 1 \cdot 5/3 = 5/3
+				\end{equation*}
+				
+				\begin{equation*}
+					P = \prod{p_i} = 1 + 1 + 2 = 4
+				\end{equation*}
+				
+				\begin{equation*}
+					F = GH = 5/3(64) \approx 106.67
+				\end{equation*}
+				
+				\begin{equation*}
+					\hat{f} = F^{1/3} \approx 4.7425
+				\end{equation*}
+				
+				\begin{equation*}
+					D = \sum{d_i} = D_F + P = \sum{f_i} + \sum{p_i} = 3(4.7425) + 4 \approx \mathbf{18.2275}
+				\end{equation*}
+				
+				\item Compare this delay with your answer from part (a) and explain how gate selection affects
+path delay.
+			\end{itemize}
 		\end{enumerate}
 	\end{enumerate}
 
