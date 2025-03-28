@@ -109,6 +109,20 @@
 			= \left[0.03(145.75\ \text{nF}) + 0.09(53.9\ \text{nF})\right](1^2)(800 \times 10^6) = \mathbf{7.3788}\ \text{\textbf{W}}
 		\end{equation*}
 		
+		\item Using the same system-on-chip described in Question 1, assume the following leakage parameters:
+		
+		\begin{itemize}
+			\item \textbf{Subthreshold leakage:}
+				\begin{itemize}[label={--}]
+					\item Low-threshold (high-leakage) devices: $100\ \text{nA}/\text{R}_\text{m}$
+					\item High-threshold (low-leakage) devices: $10\ \text{nA}/\text{R}_\text{m}$
+				\end{itemize}
+			\item \textbf{Gate leakage:} $5\ \text{nA}/\text{R}_\text{m}$
+			\item \textbf{Junction leakage:} Negligible.
+		\end{itemize}
+		
+		For leakage, the memory arrays are designed with high-threshold (i.e. low-leakage) devices, while the logic uses high-threshold devices only on the 8\% of the paths that are most performance critical; the remaining 92\% of the logic uses low-threshold (high-leakage) devices. Assume that (on average) half the transistors are OFF and contribute subthreshold leakage and half are ON and contribute gate leakage.
+
 	\end{enumerate}
 
 \end{document}
