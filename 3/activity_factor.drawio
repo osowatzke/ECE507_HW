@@ -59,7 +59,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="tQJZ7p0l9zqMj4EgYoDL" name="part b)">
-    <mxGraphModel dx="2427" dy="1293" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="1" shadow="0">
+    <mxGraphModel dx="2063" dy="1099" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="1" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -182,7 +182,7 @@
         <mxCell id="7h4yMdxJxXIa-4TwbRSt-20" value="&lt;span&gt;$$P=3/8$$&lt;/span&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;" vertex="1" parent="1">
           <mxGeometry x="850" y="290" width="60" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="7h4yMdxJxXIa-4TwbRSt-21" value="&lt;span&gt;$$P=15/64$$&lt;/span&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;" vertex="1" parent="1">
+        <mxCell id="7h4yMdxJxXIa-4TwbRSt-21" value="&lt;span&gt;$$\alpha=15/64$$&lt;/span&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;" vertex="1" parent="1">
           <mxGeometry x="850" y="320" width="60" height="30" as="geometry" />
         </mxCell>
         <mxCell id="7h4yMdxJxXIa-4TwbRSt-22" value="&lt;span&gt;$$P=35/64$$&lt;/span&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;" vertex="1" parent="1">
