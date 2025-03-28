@@ -177,6 +177,104 @@
 		
 		Then, we can use $\alpha = \bar{P}_iP_i$ to determine the activity factor.
 		
+		\begin{enumerate}
+			\item ~
+			
+			\begin{figure}[H]				
+				\centerline{\fbox{\includegraphics[width=0.8\textwidth]{activity_factor_a.png}}}
+				\caption{Activity Factor Estimation}
+				\label{fig::activity_factor_a}
+			\end{figure}
+			
+			To start, we can compute the activity factor of the input nodes as follows:
+			
+			\begin{equation*}
+				\alpha = \bar{P}P = (1 - P)P = (1 - 1/2)(1/2) = 1/2(1/2) = \mathbf{1/4}
+			\end{equation*}
+			
+			The inverter output probability is $1 - P = 1 - 1/2 = 1/2$. Because the inverter output probability is the same as the input probability, the inverter outputs should have the same activity factor ($\mathbf{\alpha = 1/4}$).
+			
+			Next, we can compute the AND gate output probabilities, doing so we find
+			
+			\begin{equation*}
+				P_Y = P_AP_B = 1/2(1/2) = 1/4
+			\end{equation*}
+			
+			The activity factor of the AND gate output is then given by
+			
+			\begin{equation*}
+				\alpha = \bar{P}P = (1 - P)P = (1 - 1/4)(1/4) = 3/4(1/4) = \mathbf{3/16}
+			\end{equation*}
+			
+			Then, we can compute the OR gate output probability as follows:
+			
+			\begin{equation*}
+				P_Y = 1 - \bar{P}_A\bar{P}_B = 1 - (1 - P_A)(1 - P_B) = 1 - (1 - 1/4)^2 = 1 - (3/4)^2 = 1 - 9/16 = 7/16
+			\end{equation*}
+			
+			Finally, we can compute the activity factor of the OR gate output, which is given by;
+			
+			\begin{equation*}
+				\alpha = \bar{P}P = (1 - P)P = (1 - 7/16)(7/16) = 9/16(7/16) = \mathbf{63/256}
+			\end{equation*}
+			
+			\item ~
+			
+			\begin{figure}[H]				
+				\centerline{\fbox{\includegraphics[width=0.8\textwidth]{activity_factor_b.png}}}
+				\caption{Activity Factor Estimation}
+				\label{fig::activity_factor_b}
+			\end{figure}
+			
+			From the previous section, we know that the activity factor of the input nodes is $\mathbf{1/4}$. Next, we can compute the output probabilities of first stage of AND gates. Doing so, we find
+			
+			\begin{equation*}
+				P_Y = P_AP_B = 1/2(1/2) = 1/4
+			\end{equation*}
+			
+			The activity factor of the AND gate output is then given by
+			
+			\begin{equation*}
+				\alpha = \bar{P}P = (1 - P)P = (1 - 1/4)(1/4) = 3/4(1/4) = \mathbf{3/16}
+			\end{equation*}
+			
+			We can perform similar analysis for the NOR gate in the first stage. This results in the following output probability:
+			
+			\begin{equation*}
+				P_Y = 1 - \bar{P}_A\bar{P}_B = 1 - (1 - P_A)(1 - P_B) = 1 - (1 - 1/2)^2 = 1 - (1/2)^2 = 1 - 1/4 = 3/4
+			\end{equation*}
+			
+			This, in turn, results in the following activity factor
+			
+			\begin{equation*}
+				\alpha = \bar{P}P = (1 - P)P = (1 - 3/4)(3/4) = 1/4(3/4) = \mathbf{3/16}
+			\end{equation*}
+			
+			Next, we consider the second stage AND gate. It has an output probability.
+			
+			\begin{equation*}
+				P_Y = P_AP_B = 3/4(1/4) = 3/16
+			\end{equation*}
+			
+			This corresponds to the following activity factor:
+			
+			\begin{equation*}
+				\alpha = \bar{P}P = (1 - P)P = (1 - 3/16)(3/16) = 13/16(3/16) = \mathbf{39/256}
+			\end{equation*}
+			
+			Finally, we can consider the output probability of the final OR gate. Doing so, we find
+			
+			\begin{equation*}
+				P_Y = 1 - \bar{P}_A\bar{P}_B = 1 - (1 - P_A)(1 - P_B) = 1 - (1 - 1/4)(1 - 3/16) = 1 - (3/4)(13/16) = 1 - 39/64 = 25/64
+			\end{equation*}
+			
+			This results in the following activity factor:
+			
+			\begin{equation*}
+				\alpha = \bar{P}P = (1 - P)P = (1 - 25/64)(25/64) = 39/64(25/64) = \mathbf{975/4096}
+			\end{equation*}
+			
+		\end{enumerate}
 	\end{enumerate}
 
 \end{document}
