@@ -123,6 +123,27 @@
 		
 		For leakage, the memory arrays are designed with high-threshold (i.e. low-leakage) devices, while the logic uses high-threshold devices only on the 8\% of the paths that are most performance critical; the remaining 92\% of the logic uses low-threshold (high-leakage) devices. Assume that (on average) half the transistors are OFF and contribute subthreshold leakage and half are ON and contribute gate leakage.
 
+		\textbf{Estimate the static power consumption.}
+		
+		\begin{equation*}
+			W_{\text{normal-V}_\text{t}} = (70 \times 10^6)(14\lambda)(0.025\ \text{R}_\text{m}/\lambda)(0.08) = 1.96 \times 10^6\ \text{R}_\text{m}
+		\end{equation*}
+		
+		\begin{equation*}
+			W_{\text{high-V}_\text{t}} = \left[(70 \times 10^6)(14\lambda)(0.92) + (530 \times 10^6)(5\lambda)\right](0.025\ \text{R}_\text{m}/\lambda) = 88.79 \times 10^6\ \text{R}_\text{m}
+		\end{equation*}
+		
+		\begin{equation*}
+			I_\text{sub} = \left[W_{\text{normal-V}_\text{t}} \times 100\ \text{nA}/\text{R}_\text{m} + W_{\text{high-V}_\text{t}} \times 10\ \text{nA}/\text{R}_\text{m}\right]/2 = 541.95\ \text{mA}
+		\end{equation*}			
+			
+		\begin{equation*}
+			I_\text{static} = \left[(W_{\text{normal-V}_\text{t}} + W_{\text{high-V}_\text{t}}) \times 5\ \text{nA}/\text{R}_\text{m}\right]/2 = 226.875\ \text{mA}
+		\end{equation*}	
+		
+		\begin{equation*}
+			P_\text{static} = (541.95\ \text{mA} + 226.875\ \text{mA})(1.0 V) = \mathbf{768.825}\ \text{\textbf{mW}}
+		\end{equation*}	
 	\end{enumerate}
 
 \end{document}
