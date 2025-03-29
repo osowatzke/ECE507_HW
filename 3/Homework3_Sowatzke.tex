@@ -544,15 +544,15 @@
 				Solving for each of the stages, we find:
 				
 				\begin{equation*}
-					b_1 = \frac{8 + 0}{8} = 1
+					b_1 = \frac{x + 2x}{x} = \frac{3x}{x} = 3
 				\end{equation*}
 				
 				\begin{equation*}
-					b_2 = \frac{x + 2x}{x} = \frac{3x}{x} = 3
+					b_2 = \frac{y + y}{y} = \frac{2y}{y} = 2
 				\end{equation*}
 				
 				\begin{equation*}
-					b_3 = \frac{y + y}{y} = \frac{2y}{y} = 2
+					b_3 = \frac{80 + 0}{80} = \frac{80}{80} = 1
 				\end{equation*}
 				
 				Therefore, $B$ is defined as follows:
@@ -572,6 +572,35 @@
 				\begin{equation*}
 					\hat{f} = \hat{f}_i = F^{1/N} = (222.22)^{1/3} \approx \mathbf{6.057}
 				\end{equation*}
+					
+				\item How do you size each gate in the design? (or what are x and y?)
+			
+				We can solve for the size of each gate in the design using the following equation.
+				
+				\begin{equation*}
+					\hat{f} = bgh = bg\frac{C_{out}}{C_{in}}
+				\end{equation*}
+				
+				For the last stage, we can solve for $y$ as follows:
+				
+				\begin{equation*}
+					\hat{f} = bgh = bg\frac{C_{out}}{C_{in}} = \left(\frac{5}{3}\right)\left(\frac{80}{y}\right)
+				\end{equation*}
+				
+				\begin{equation*}
+					 \Rightarrow y = \left(\frac{5}{3}\right)\left(\frac{80}{\hat{f}}\right) \approx \left(\frac{5}{3}\right)\left(\frac{80}{6.057}\right) \approx \mathbf{22.013}
+				\end{equation*}
+				
+				Then, we can solve for $x$ as follows:
+				
+				\begin{equation*}
+					\hat{f} = bgh = bg\frac{C_{out}}{C_{in}} \approx 2\left(\frac{5}{3}\right)\left(\frac{22.013}{x}\right)
+				\end{equation*}
+				
+				\begin{equation*}
+					 \Rightarrow x \approx 2\left(\frac{5}{3}\right)\left(\frac{22.013}{\hat{f}}\right) \approx 2\left(\frac{5}{3}\right)\left(\frac{22.013}{6.057}\right) \approx \mathbf{12.114}
+				\end{equation*}
+			
 			\end{enumerate}
 	\end{enumerate}
 
