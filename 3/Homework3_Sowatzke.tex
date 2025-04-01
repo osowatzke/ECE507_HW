@@ -147,7 +147,9 @@
 			P_\text{static} = (541.95\ \text{mA} + 226.875\ \text{mA})(1.0 V) = \mathbf{768.825}\ \text{\textbf{mW}}
 		\end{equation*}	
 		
-		\item Estimate the activity factor at each node for each circuit if the inputs have $P = 0.5$. We can use Table \ref{table::gate_out_prob} to determine the output probabilities of each gate.
+		\item Estimate the activity factor at each node for each circuit if the inputs have $P = 0.5$.
+		
+		We can use Table \ref{table::gate_out_prob} to determine the output probabilities of each gate.
 		
 		\vspace{-24pt}	
 		\begin{table}[H]
@@ -178,7 +180,7 @@
 		\vspace{-24pt}	
 		
 		Then, we can use $\alpha = \bar{P}_iP_i$ to determine the activity factor.
-		
+		\pagebreak
 		\begin{enumerate}
 			\item ~
 			
@@ -220,6 +222,7 @@
 				\alpha = \bar{P}P = (1 - P)P = (1 - 7/16)(7/16) = 9/16(7/16) = \mathbf{63/256}
 			\end{equation*}
 			
+			\pagebreak
 			\item ~
 			
 			\begin{figure}[H]				
@@ -228,31 +231,31 @@
 				\label{fig::activity_factor_b}
 			\end{figure}
 			
-			From part a), we know that the activity factor of the input nodes is $\mathbf{1/4}$. Next, we can compute the output probabilities of first stage of AND gates. Doing so, we find
+			From part a), we know that the activity factor of the input nodes is $\mathbf{1/4}$. Next, we can compute the output probabilities of the first stage AND gates. Doing so, we find
 			
 			\begin{equation*}
 				P_Y = P_AP_B = 1/2(1/2) = 1/4
 			\end{equation*}
 			
-			The activity factor of the AND gate output is then given by
+			The activity factor of the AND gate outputs is then given by
 			
 			\begin{equation*}
 				\alpha = \bar{P}P = (1 - P)P = (1 - 1/4)(1/4) = 3/4(1/4) = \mathbf{3/16}
 			\end{equation*}
 			
-			We can perform similar analysis for the NOR gate in the first stage. This results in the following output probability:
+			We can perform similar analysis for the first stage NOR gate. This results in the following output probability:
 			
 			\begin{equation*}
 				P_Y = 1 - \bar{P}_A\bar{P}_B = 1 - (1 - P_A)(1 - P_B) = 1 - (1 - 1/2)^2 = 1 - (1/2)^2 = 1 - 1/4 = 3/4
 			\end{equation*}
 			
-			This, in turn, results in the following activity factor
+			which corresponds to the following activity factor
 			
 			\begin{equation*}
 				\alpha = \bar{P}P = (1 - P)P = (1 - 3/4)(3/4) = 1/4(3/4) = \mathbf{3/16}
 			\end{equation*}
 			
-			Next, we consider the second stage AND gate. It has an output probability.
+			Next, we consider the second stage AND gate. It has an output probability
 			
 			\begin{equation*}
 				P_Y = P_AP_B = 3/4(1/4) = 3/16
@@ -300,7 +303,7 @@
 				\alpha = \bar{P}P = (1 - P)P = (1 - 3/4)(3/4) = 1/4(3/4) = \mathbf{3/16}
 			\end{equation*}
 			
-			Next, we consider the NOR gate in the second stage. Analyzing this gate, we find that its output probability is
+			Next, we consider the second stage NOR gate. Analyzing this gate, we find that its output probability is
 			
 			\begin{equation*}
 				P_Y = \bar{P}_A\bar{P}_B = (1 - P_A)(1 - P_B) = (1 - 1/2)(1 - 1/2) = 1/2(1/2) = 1/4
@@ -356,7 +359,7 @@
 				\label{fig::activity_factor_d}
 			\end{figure}
 			
-			From part a), we know that the activity factor of the input nodes is $\mathbf{1/4}$. Next, we can compute the output probabilities and activity factors of the first stage inverters. Doing so, we find that $P = 1/2$ and $\mathbf{\alpha = 1/4}$ (same as the inputs). Then, we can compute the output probabilities of the NOR gates, doing so we find
+			From part a), we know that the activity factor of the input nodes is $\mathbf{1/4}$. Next, we can compute the output probabilities and activity factors of the first stage inverters. Doing so, we find that $P = 1/2$ and $\mathbf{\alpha = 1/4}$ (same as the inputs). Then, we can compute the output probabilities of the OR gates, doing so we find
 
 			\begin{equation*}
 				P_Y = 1 - \bar{P}_A\bar{P}_B = 1 - 1/2(1/2) = 1 - 1/4 = 3/4
@@ -368,7 +371,7 @@
 				\alpha = \bar{P}P = (1 - P)P = (1 - 3/4)(3/4) = 1/4(3/4) = \mathbf{3/16}
 			\end{equation*}
 			
-			Next, we consider the NAND gate in the second stage. Analyzing this gate, we find that its output probability is
+			Next, we consider the second stage NAND gate. Analyzing this gate, we find that its output probability is
 			
 			\begin{equation*}
 				P_Y = 1 - P_AP_B = 1 - 3/4(3/4) = 1 - 9/16 = 7/16
@@ -380,7 +383,7 @@
 				\alpha = \bar{P}P = (1 - P)P = (1 - 7/16)(7/16) = 9/16(7/16) = \mathbf{63/256}
 			\end{equation*}
 			
-			Finally, we consider the output probability of the following NOR gate:
+			Finally, we consider the output probability of the final NOR gate:
 			
 			\begin{equation*}
 				P_Y = \bar{P}_A\bar{P}_B = (1 - P_A)(1 - P_B) = (1 - 7/16)(1 - 3/4) = 9/16(1/4) = 9/64
@@ -443,7 +446,7 @@
 				
 				\item Which design offers the lower delay? Why?
 				
-				The design with 4 stages has a lower delay. Even though the updated design includes more stages, the delay of each individual stage is lower due to a decreased stage fanout $(d = f + p)$. Note there is an optimal number of stages. Adding too many stages can be counter-productive. Assuming a gate parasitics of 1, we find that the optimal stage fanout is close to 4, which just happens to match the results our 4 stage solution.
+				The design with 4 stages has a lower delay. Even though the updated design includes more stages, the delay of each individual stage is lower due to a decreased stage fanout $(d = f + p)$. Note there is an optimal number of stages. Adding too many stages can be counter-productive. Assuming gate parasitics of 1, we find that the optimal stage fanout is close to 4, which just happens to match the results our 4-stage solution.
 				
 			\end{itemize}
 			
@@ -474,7 +477,7 @@
 				
 				\item Compare this delay with your answer from part (a) and explain how gate selection affects path delay.
 				
-				The delay from this design is lower than the delay in part (a). Even though the gate parasitics are higher, the path logical effort is lower. The path logical effort is the product of the individual gate logical efforts. Reducing this product reduces the path effort and in turn the delay. Conversely, increasing the gate parasitics directly increases the path delay. In our example, updating our gates reduced the path logical effort ($G$) and the path effort ($F$) by a factor of $12/5$ (a linear relationship). Because there were three stage of logic, this reduced the stage effort ($\hat{f}$) by a factor of $(12/5)^{1/3} \approx 1.3389$. The overall delay is the sum of the stage efforts and parasitics. Accounting for both effects, we find that the delay is reduced by $3(6.3496)(1 - 1/1.3389) - 1 \approx 3.8216$. For different gate combinations, simulation is the preferred way to characterize the delay. In general, we should minimize the logical efforts and parasitics to reduce the delay. However, Reducing the path effort can have a larger impact, especially when the electrical effort is high.
+				The delay from this design is lower than the delay in part (a). Even though the gate parasitics are higher, the path logical effort is lower. The path logical effort is the product of the individual gate logical efforts. Reducing this product reduces the path effort and in turn the delay. Conversely, increasing the gate parasitics directly increases the path delay. In our example, updating our gates reduced the path logical effort ($G$) and the path effort ($F$) by a factor of $12/5$ (a linear decrease). Because there were three stage of logic, this reduced the stage effort ($\hat{f}$) by a factor of $(12/5)^{1/3} \approx 1.3389$. The overall delay is the sum of the stage efforts and parasitics. Accounting for both effects, we find that the delay is reduced by $3(6.3496)(1 - 1/1.3389) - 1 \approx 3.8216$. For different gate combinations, simulation is the preferred way to characterize the delay. In general, we should minimize the logical efforts and parasitics to reduce the delay. However, as observed, reducing the path effort can have a larger impact, especially when the electrical effort is high.
 				
 			\end{itemize}
 		\end{enumerate}
