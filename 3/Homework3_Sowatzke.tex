@@ -472,6 +472,8 @@
 				
 				\item Compare this delay with your answer from part (a) and explain how gate selection affects path delay.
 				
+				The delay from this design is lower than the delay in part (a). Even though the gate parasitics are higher, the path logical effort is lower. The path logical effort is the product of the individual gate logical efforts. Reducing this product reduces the path effort and in turn the delay. Conversely, increasing the gate parasitics directly increases the path delay. In our example, updating our gates reduced the path logical effort ($G$) and the path effort ($F$) by a factor of $12/5$ (a linear relationship). Because there were three stage of logic, this reduced the stage effort ($\hat{f}$) by a factor of $(12/5)^{1/3} \approx 1.3389$. The overall delay is the sum of the stage efforts and parasitics. Accounting for both effects, we find that the delay is reduced by $3(6.3496)(1 - 1/1.3389) - 1 \approx 3.8216$. For different gate combinations, simulation is the preferred way to characterize the delay. In general, we should minimize the logical efforts and parasitics to reduce the delay. However, Reducing the path effort can have a larger impact, especially when the electrical effort is high.
+				
 			\end{itemize}
 		\end{enumerate}
 		
