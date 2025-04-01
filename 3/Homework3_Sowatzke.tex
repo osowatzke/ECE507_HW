@@ -441,7 +441,7 @@
 				
 				\item Which design offers the lower delay? Why?
 				
-				The design with 4 stages has a lower delay. Even though the updated design includes more stages, the delay of each individual stage is lower due to a decreased fanout in each stage ($d = f + p$). Note that adding too many stages can increase the delay more than the delay is improved in each individual stage. Therefore, there is an optimal number of stages. Assuming a gate parasitics of 1, we find that the optimal stage fanout is close to 4, which just happens to match the results our 4 stage solution.
+				The design with 4 stages has a lower delay. Even though the updated design includes more stages, the delay of each individual stage is lower due to a decreased stage fanout $(d = f + p)$. Note there is an optimal number of stages. Adding too many stages can be counter-productive. Assuming a gate parasitics of 1, we find that the optimal stage fanout is close to 4, which just happens to match the results our 4 stage solution.
 				
 			\end{itemize}
 			
