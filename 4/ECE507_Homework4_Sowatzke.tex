@@ -117,6 +117,33 @@
 			$\therefore V_\text{out} = Q_{out}/C_L = 4.6C_A/3C_A = \mathbf{1.53\text{\textbf{V}}},\ V_x = \mathbf{1.4\text{\textbf{V}}}$
 			
 			\end{enumerate}
+			
+		\item In the following figure, what king of logic is implemented in this circuit? Write out the Z function.
+		
+			\begin{figure}[H]
+				\centerline{\includegraphics[width=0.5\textwidth]{circuit_question3.png}}
+				\label{fig::circuit_question3}
+			\end{figure}
+
+			The dynamic logic gates implement the following equations:
+			
+			$W = \overline{AB}$
+			
+			$Y = \overline{XC}$
+			
+			The static CMOS gates implement the following equations:
+			
+			$X = \bar{W}$
+			
+			$Z = \bar{Y}$
+			
+			$\therefore$ Z can be computed as follows:
+			
+			$Z = \overline{\overline{XC}} = XC = \bar{W}C = \overline{\overline{AB}}C = \mathbf{ABC}$
+			
+			Alternatively, we can recognize Z as two chained domino AND gates.
+			
+			
 	\end{enumerate}
 
 \end{document}
