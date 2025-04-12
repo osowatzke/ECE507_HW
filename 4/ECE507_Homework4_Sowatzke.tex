@@ -164,6 +164,24 @@
 			\end{figure}
 			
 			\item[2.] What type of CMOS design is the depicted in the figure below? Describe its functionality and write down its logic equation?
+			
+			\begin{figure}[H]
+				\centerline{\includegraphics[width=0.5\textwidth]{circuit4b.png}}
+				\label{fig::circuit4b}
+			\end{figure}
+			
+			The design illustrates differential cascode voltage switch logic (DCVSL). When A=1 and B=0, $\overline{\text{Out}}$ is connected to ground, and the PMOS transistor on the left is turned on pulling $\text{Out}$ to $V_{DD}$. Similarly, when A=0 and B=1, $\overline{\text{Out}}$ is connected to ground, and the PMOS transistor on the left is turned on pulling $\text{Out}$ to $V_{DD}$. Next, if A=B=0, $\text{Out}$ is connected to ground and the PMOS transistor on the right is turned on pulling $\overline{\text{Out}}$ to $V_{DD}$. Finally, if A=B=1, $\text{Out}$ is connected to ground and the PMOS transistor on the right is turned on pulling $\overline{\text{Out}}$ to $V_{DD}$. Our circuit implements the following logic equations:
+			
+			\begin{equation*}
+				\text{Out} = \bar{A}B + A\bar{B}
+			\end{equation*}
+			
+			\begin{equation*}
+				\overline{\text{Out}} = \overline{\bar{A}B + A\bar{B}} = (\overline{\bar{A}B})(\overline{A\bar{B}}) = (A + \bar{B})(\bar{A} + B) = A\bar{A} + \bar{A}\bar{B} + AB + B\bar{B} = AB + \bar{A}\bar{B}
+			\end{equation*}
+			
+			We recognize the equation for $\text{Out}$ as XOR, and the equation for $\overline{\text{Out}}$ as XNOR, where $\text{Out}$ is the XOR output. Therefore, our gate implements XOR/XNOR.
+			
 			\end{enumerate}			 
 	\end{enumerate}
 
