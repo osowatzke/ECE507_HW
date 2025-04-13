@@ -108,9 +108,7 @@
 			
 			Therefore, $C_A$ will charge until $V_x$ is 1.4V, all remaining charge will remain in $C_L$.
 			
-			$Q_x = 1.4C_A$
-			
-			$\Rightarrow Q_{out} = C_LV_{DD} - Q_x = 2C_L - 1.4C_A = 6C_A - 1.4C_A = 4.6C_A$
+			$\Rightarrow Q_{out} = C_LV_{DD} - C_AV_x = 2C_L - 1.4C_A = 6C_A - 1.4C_A = 4.6C_A$
 			
 			$\therefore V_\text{out} = Q_{out}/C_L = 4.6C_A/3C_A = \mathbf{1.53\text{\textbf{V}}},\ V_x = \mathbf{1.4\text{\textbf{V}}}$
 			
@@ -125,7 +123,7 @@
 		Our static complementary CMOS design is shown in Figure \ref{fig::problem2_static_cmos}. To design it, we start with the pull-down network. Each OR in our logical equation becomes a parallel set of NMOS transistors, and each AND becomes a series of NMOS transistors. Then to get the pull-up network, we use the rule of conduction complements. Each series of NMOS transistors becomes a parallel set of PMOS transistors, and each parallel set of NMOS transistors becomes a series of PMOS transistors.
 		 
 		\begin{figure}[H]
-			\centerline{\includegraphics[width=0.3\textwidth]{problem2_static_cmos.png}}
+			\centerline{\includegraphics[width=0.35\textwidth]{problem2_static_cmos.png}}
 			\caption{Static Complementary CMOS Design which Implements $Y = \overline{(A + B)C + D}$}
 			\label{fig::problem2_static_cmos}
 		\end{figure}
@@ -146,7 +144,7 @@
 			\label{fig::problem2_domino_dynamic}
 		\end{figure}
 
-		Domino logic is attractive for high-speed circuits because it reduces the input capacitance (it is 1.3 - 2x faster than static CMOS). However, it has many challenges: Monotonicity, leakage, charge sharing, and noise. However, it has been widely displaced by static CMOS because power is the limiting factor.
+		Domino logic is attractive for high-speed circuits because it reduces the input capacitance (it is 1.3 - 2x faster than static CMOS). However, it has many challenges, which include monotonicity, leakage, charge sharing, and noise. Because power is the limiting factor, it has been widely displaced by static CMOS.
 		
 		\item In the following figure, what king of logic is implemented in this circuit? Write out the Z function.
 		
@@ -155,7 +153,9 @@
 				\label{fig::circuit_question3}
 			\end{figure}
 
-			The circuit implements domino dynamic logic. The dynamic logic gates implement the following equations:
+			The circuit implements domino dynamic logic.
+			
+			The dynamic logic gates implement the following equations:
 			
 			$W = \overline{AB}$
 			
@@ -206,7 +206,7 @@
 				\overline{\text{Out}} = AB + \bar{A}\bar{B}
 			\end{equation*}
 			
-			We recognize the equation for $\text{Out}$ as XOR, and the equation for $\overline{\text{Out}}$ as XNOR, where $\text{Out}$ is the XOR output. Therefore, our gate implements XOR/XNOR.
+			We recognize the equation for $\text{Out}$ as XOR, and the equation for $\overline{\text{Out}}$ as XNOR. Therefore, our gate implements XOR/XNOR.
 			
 			\end{enumerate}
 			
