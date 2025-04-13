@@ -92,11 +92,9 @@
 			
 			\item[2.] $V_{DD}=2.0\text{V}$, $|V_{th}|=0.6\text{V}$ for all PMOS and NMOS transistors. $C_L/C_A=3$, $C_L/C_B=5$; What is the voltage value at X and at output nodes ($V_x$ = ? and $V_{out}$ = ?)
 			
-			$V_{\text{out}}$ will be charged to $V_{DD}$ during the charge phase. Assume that all other nodes are charged to $0\text{V}$.
+			$V_{\text{out}}$ will be charged to $V_{DD}$ during the precharge phase. Assume that all other nodes are charged to $0\text{V}$. When $A$ rises from 0 to 1, $C_L$ will discharge through $M_a$ and share charge with $C_A$. Because $B=0$, $M_b$ will be in cutoff mode, and there will be no charge sharing with $C_B$.
 			
-			When $A$ rises from 0 to 1. $C_L$ will discharge through $M_a$ and share charge with $C_A$. Because $B=0$, $M_b$ should be in the cutoff state, so there will be no charge sharing with $C_B$.
-			
-			Start by assuming that there is no voltage drop across $V_a$.
+			Start by assuming that $M_a$ is fully conductive (i.e. there is no voltage drop across it).
 			
 			\begin{equation*}
 				C_LV_{DD} = (C_L + C_A)V_{out} 
@@ -106,13 +104,13 @@
 				\Rightarrow V_x = V_{out} = \frac{C_LV_{DD}}{C_L + C_A} = \frac{3C_AV_{DD}}{3C_A + C_A} = \frac{3V_{DD}}{4} = 1.5\text{V}
 			\end{equation*}
 			
-			 However, for $M_a$ to be on $V_{gs} < V_{th} \Rightarrow V_x \leq 1.4\text{V}$.
+			 However, for $M_a$ to be on $V_{gs} > V_{th} \Rightarrow V_x \leq 1.4\text{V}$.
 			
-			Therefore, $V_x$ will charge to 1.4V, which will consume some of the charge in $C_L$.
+			Therefore, $C_A$ will charge until $V_x$ is 1.4V, all remaining charge will remain in $C_L$.
 			
 			$Q_x = 1.4C_A$
 			
-			$\Rightarrow Q_{out} = C_LV_DD - Q_x = 2C_L - 1.4C_A = 6C_A - 1.4C_A = 4.6C_A$
+			$\Rightarrow Q_{out} = C_LV_{DD} - Q_x = 2C_L - 1.4C_A = 6C_A - 1.4C_A = 4.6C_A$
 			
 			$\therefore V_\text{out} = Q_{out}/C_L = 4.6C_A/3C_A = \mathbf{1.53\text{\textbf{V}}},\ V_x = \mathbf{1.4\text{\textbf{V}}}$
 			
