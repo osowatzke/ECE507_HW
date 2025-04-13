@@ -120,27 +120,34 @@
 		
 		$\mathbf{Y = \overline{(A + B)C + D}}$
 		
-		Assume we use short channel transistors. We use 0.10 um process with 1GHz clock frequency and 1.0V power supply with 121mA/mm. We would like to keep the power density the same, but we would like to scale current density to $81\text{mA}/\text{mm}^2$.
+		Assume we use short channel transistors. We use 0.10um process with 1GHz clock frequency and 1.0V power supply with 121mA/mm. We would like to keep the power density the same, but we would like to scale current density to $81\text{mA}/\text{mm}^2$.
 		
+		Our static complementary CMOS design is shown in Figure \ref{fig::problem2_static_cmos}. To design it, we start with the pull-down network. Each OR in our logical equation becomes a parallel set of NMOS transistors, and each AND becomes a series of NMOS transistors. Then to get the pull-up network, we use the rule of conduction complements. Each series of NMOS transistors becomes a parallel set of PMOS transistors, and each parallel set of NMOS transistors becomes a series of PMOS transistors.
+		 
 		\begin{figure}[H]
-			\centerline{\includegraphics[width=0.35\textwidth]{problem2_static_cmos.png}}
+			\centerline{\includegraphics[width=0.3\textwidth]{problem2_static_cmos.png}}
 			\caption{Static Complementary CMOS Design which Implements $Y = \overline{(A + B)C + D}$}
 			\label{fig::problem2_static_cmos}
 		\end{figure}
 
+		Next, we show the pseudo-NMOS design in Figure \ref{fig::problem2_pseudo_nmos}. To get the pseudo NMOS design, we replace the pull-up network, with a single pull-up transistor that is always on. The effective size of the pull-up transistor is decreased, so it can be overcome by the pull-down network when the pull-down network is on.
+		
 		\begin{figure}[H]
 			\centerline{\includegraphics[width=0.35\textwidth]{problem2_pseudo_nmos.png}}
 			\caption{Pseudo NMOS Design which Implements $Y = \overline{(A + B)C + D}$}
 			\label{fig::problem2_pseudo_nmos}
 		\end{figure}
 
+		The pseudo-NMOS circuit has a smaller area and load than the static complementary CMOS design. However, there is more static power dissipation. We can reduce the static power consumption with a domino dynamic circuit. The domino dynamic design is shown in Figure \ref{fig::problem2_domino_dynamic}. In the domino dynamic design, we connect the PMOS transistor to the clock instead of ground. We also add a foot (NMOS transistor connected to the clock) to reduce static power consumption. When the clock is low, we charge the load transistor. Then, when the clock goes high, we evaluate the pull-down network.
+		
 		\begin{figure}[H]
 			\centerline{\includegraphics[width=0.35\textwidth]{problem2_domino_dynamic.png}}
 			\caption{Domino Dynamic Design which Implements $Y = \overline{(A + B)C + D}$}
 			\label{fig::problem2_domino_dynamic}
 		\end{figure}
 
-
+		Domino logic is attractive for high-speed circuits because it reduces the input capacitance (it is 1.3 - 2x faster than static CMOS). However, it has many challenges: Monotonicity, leakage, charge sharing, and noise. However, it has been widely displaced by static CMOS because power is the limiting factor.
+		
 		\item In the following figure, what king of logic is implemented in this circuit? Write out the Z function.
 		
 			\begin{figure}[H]
@@ -148,7 +155,7 @@
 				\label{fig::circuit_question3}
 			\end{figure}
 
-			The dynamic logic gates implement the following equations:
+			The circuit implements domino dynamic logic. The dynamic logic gates implement the following equations:
 			
 			$W = \overline{AB}$
 			
@@ -156,15 +163,15 @@
 			
 			The static CMOS gates implement the following equations:
 			
-			$X = \bar{W}$
+			$X = \overline{W}$
 			
-			$Z = \bar{Y}$
+			$Z = \overline{Y}$
 			
 			$\therefore$ Z can be computed as follows:
 			
-			$Z = \overline{\overline{XC}} = XC = \bar{W}C = \overline{\overline{AB}}C = \mathbf{ABC}$
+			$Z = \overline{\overline{XC}} = XC = \overline{W}C = \overline{\overline{AB}}C = \mathbf{ABC}$
 			
-			Alternatively, we can recognize Z as two chained domino AND gates.
+			Alternatively, we can recognize Z as two chained domino AND gates, which implies $\mathbf{Z = (AB)C = ABC}$.
 			
 		\item ~
 		
