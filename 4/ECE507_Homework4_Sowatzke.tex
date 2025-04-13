@@ -171,7 +171,9 @@
 			
 			$Z = \overline{\overline{XC}} = XC = \overline{W}C = \overline{\overline{AB}}C = \mathbf{ABC}$
 			
-			Alternatively, we can recognize Z as two chained domino AND gates, which implies $\mathbf{Z = (AB)C = ABC}$.
+			Alternatively, we can recognize Z as two chained domino AND gates, which implies
+			
+			$\mathbf{Z = (AB)C = ABC}$.
 			
 		\item ~
 		
@@ -206,7 +208,26 @@
 			
 			We recognize the equation for $\text{Out}$ as XOR, and the equation for $\overline{\text{Out}}$ as XNOR, where $\text{Out}$ is the XOR output. Therefore, our gate implements XOR/XNOR.
 			
-			\end{enumerate}			 
+			\end{enumerate}
+			
+		\item Setup and Hold time for A?
+		
+			\begin{figure}[H]
+				\centerline{\includegraphics[width=0.5\textwidth]{circuit5.png}}
+				\label{fig::circuit5}
+			\end{figure}
+			
+			The setup time for A is the minimum amount of time A must be stable before the rising edge of the clock cycle to ensure the previous input is not accidentally sampled.
+			
+			$t_{\text{setup}}(A) = \text{Setup Time of Flip Flop} + \text{Max Data path delay} - \text{Min Clock path delay}$
+			
+			$ = t_{\text{setup}}(U1) + t_{\text{max}}(U7) + t_{\text{max}}(U3) - t_{\text{min}}(U8) = 1\text{ns} + 8\text{ns} + 3\text{ns} - 2\text{ns} = \mathbf{10\text{\textbf{ns}}}$
+			
+			The hold time for A is the minimum amount of time A must be held after the rising edge of the clock cycle to ensure the next input is not accidentally sampled.
+			
+			$t_{\text{hold}}(A) = \text{Hold Time of Flip Flop} + \text{Max Clock path delay} - \text{Min Data path delay}$
+			
+			$ = t_\text{hold}(U2) + t_{\text{max}}(U8) - t_{\text{min}}(U7) - t_{\text{min}}(U4) = 4\text{ns} + 2\text{ns} - 1\text{ns} - 7\text{ns} = \mathbf{-2\text{\textbf{ns}}}$
 	\end{enumerate}
 
 \end{document}
